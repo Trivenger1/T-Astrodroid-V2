@@ -1,0 +1,2 @@
+pysaucenao==1.6.1
+py-cord==2.4.1
