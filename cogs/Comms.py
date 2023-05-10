@@ -8,8 +8,8 @@ from discord.ext import commands
 
 
 
-class comms(commands.Cog):
-    def __init__(self, bot: discord.bot) -> None:
+class Comms(commands.Cog):
+    def __init__(self, bot):
         self.bot = bot
 
 
@@ -23,9 +23,9 @@ class comms(commands.Cog):
 
     @commands.command(help='My introduction')
     async def intro(ctx):
-        response = f'Hello there,I am {commands.user}.I was made with the purpose to train Triv\'s coding skills as well' \
-                    'as provide unreasonable and questionable entertainment to anyone else.I still have future commands to be' \
-                    'written so do stay tuned'
+        response = f'Hello there,I am {bot.user}.I was made with the purpose to train Triv\'s coding skills as well' \
+                'as provide unreasonable and questionable entertainment to anyone else.I still have future commands to be' \
+                'written so do stay tuned'
         await ctx.send(response)
 
 
@@ -42,7 +42,7 @@ class comms(commands.Cog):
     @commands.command(help='My full version specifications as of now')
     async def version(ctx):
         response = 'Trigonometry Operating Systems 2020,made on 22nd May 2020.Version 2.8.00.Collaboration of Shinonome ' \
-                    'Laboratories. Last updated [28/4/22]'
+                'Laboratories. Last updated [28/4/22]'
         await ctx.send(response)
 
 
@@ -190,3 +190,19 @@ class comms(commands.Cog):
                 await ctx.channel.send(IQ.generate_prompt6(ag[0], ag[1], ag[2], ag[3], ag[4], ag[5]))
         else:
             await ctx.channel.send(msg)
+
+
+def setup(bot: discord.Bot):
+    bot.add_cog(Comms(bot))
+
+    # async def bill(ctx,form:str,name:str):
+    # if form == 'def':
+
+    #     link = f"https://belikebill.ga/billgen-API.php?default=1&name=" + urllib.parse.quote(name)
+
+    #     # img = "tmp/" + user + ".jpg"
+    #     # print(img)
+
+    #     final = discord.Embed()
+    #     final.set_image(url=link)
+    #     await ctx.channel.send(embed=final)
