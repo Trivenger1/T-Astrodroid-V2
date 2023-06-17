@@ -11,6 +11,7 @@ class Comms(discord.Cog):
         self.bot = bot
 
 
+  
     @commands.command(help='Says whatever you wanna say')
     async def say(self,ctx, *, arg):
         if '@' in arg:

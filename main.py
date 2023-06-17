@@ -44,6 +44,8 @@ async def on_ready():
 
 
 
+
+
 login = os.getenv('TOKEN')
 
 # keep_alive()

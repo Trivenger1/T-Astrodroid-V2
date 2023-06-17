@@ -124,7 +124,7 @@ class Event(commands.Cog):
         #         await message.channel.send(emote)
         #         await message.channel.send(response)
 
-        await self.bot.process_commands(message)
+        pass
 
         # if message.author.id == green_ID:
         #     if ' rate ' in message.content:
