@@ -1,20 +1,18 @@
 import discord
 import Data.archives as archives
 import random
-import Data.IQ_data as IQ
+import Data.IQEXT as IQ
 from pysaucenao import SauceNao
 from discord.ext import commands
 
 
-
-
-class Comms(commands.Cog):
+class Comms(discord.Cog):
     def __init__(self, bot):
         self.bot = bot
 
 
     @commands.command(help='Says whatever you wanna say')
-    async def say(ctx, *, arg):
+    async def say(self,ctx, *, arg):
         if '@' in arg:
             await ctx.send('Nice try peckneck')
         else:
@@ -22,32 +20,32 @@ class Comms(commands.Cog):
 
 
     @commands.command(help='My introduction')
-    async def intro(ctx):
-        response = f'Hello there,I am {bot.user}.I was made with the purpose to train Triv\'s coding skills as well' \
+    async def intro(self,ctx):
+        response = f'Hello there,I am {self.bot.user.name}.I was made with the purpose to train Triv\'s coding skills as well' \
                 'as provide unreasonable and questionable entertainment to anyone else.I still have future commands to be' \
                 'written so do stay tuned'
         await ctx.send(response)
 
 
     @commands.command(name='help')
-    async def help_com(ctx):
+    async def help_com(self,ctx):
         await ctx.send(archives.help_res)
 
 
     @commands.command(name='music')
-    async def music_help(ctx):
+    async def music_help(self,ctx):
         await ctx.send(archives.music_lst)
 
 
     @commands.command(help='My full version specifications as of now')
-    async def version(ctx):
+    async def version(self,ctx):
         response = 'Trigonometry Operating Systems 2020,made on 22nd May 2020.Version 2.8.00.Collaboration of Shinonome ' \
                 'Laboratories. Last updated [28/4/22]'
         await ctx.send(response)
 
 
     @commands.command(name='8ball', help='Now with 50 ish responses that makes me wonder why Triv does this')
-    async def ball(ctx, line):
+    async def ball(self,ctx, line):
         chance = random.choice(range(10))
         # for ext in archives.peal_lst:
         #   if ext in ctx.content.lower():
@@ -64,7 +62,7 @@ class Comms(commands.Cog):
 
 
     @commands.command(name='satria', help='Satria:YAMETTE')
-    async def sat(ctx):
+    async def sat(self,ctx):
         from Data.archives import satria_img, sat_log
         chosen = random.choice(sat_log)
         if chosen == 'image':
@@ -78,7 +76,7 @@ class Comms(commands.Cog):
 
 
     @commands.command(name='sauce', help='tbot going dark')
-    async def source(ctx):
+    async def source(self,ctx):
         # if len(ctx.message.attachements) == 0:
         #   await ctx.channel.send('Outside links are not accepted at the moment until further updates due to lack of ability.')
 
@@ -105,7 +103,7 @@ class Comms(commands.Cog):
 
 
     @commands.command(name='purge')
-    async def clean(ctx, limit: int):
+    async def clean(self,ctx, limit: int):
         if ctx.author.id == 465755316479459328 or ctx.author.id == 676985337934774289:
             await ctx.channel.purge(limit=limit)
             await ctx.send('Cleared by {}'.format(ctx.author.mention), delete_after=20)
@@ -114,8 +112,8 @@ class Comms(commands.Cog):
             await ctx.channel.send('Haha, permission denied.')
 
 
-    @commands.listen()
-    async def on_reaction_add(reaction, user):
+    @commands.Cog.listener()
+    async def on_reaction_add(self,reaction, user):
         if str(reaction) == "📌" and (user.id == 676985337934774289 or user.id == 465755316479459328):
             await reaction.message.pin()
             await reaction.message.remove_reaction(reaction, user)
@@ -145,7 +143,7 @@ class Comms(commands.Cog):
 
 
     @commands.command()
-    async def pekofy(ctx):
+    async def pekofy(self, ctx):
         messages = await ctx.channel.history(limit=2).flatten()
         if "@" in messages[1].content:
             await ctx.channel.send("no no peko peko ޏ₍ ὸ.ό₎ރ")
@@ -154,7 +152,7 @@ class Comms(commands.Cog):
 
 
     @commands.command(name='iq')
-    async def Incorrect(ctx, *args):
+    async def Incorrect(self, ctx, *args):
         msg = "Wrong input"
 
         def checktype(argument):
