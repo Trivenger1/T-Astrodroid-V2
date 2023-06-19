@@ -44,7 +44,7 @@ eitball = ['Future is unclear,try again', 'No', 'Yes', 'Perhaps', 'It is uncerta
            'bot tells you to do? Jeez...','"I didn\'t catch that, type harder','**HA HA HA HA HAAAA**','not you again..'
            'ugh','Gone to lunch, back in 15 minutes.','IT\'S THE CONSPIRACY!','I don\'t know, ask the ouija board?','I\''
            'm sorry the person you were trying too call..','I want you to think about what you\'re asking for a second very'
-           'carefully','fuk yes','isn\'t it obvious','yes.','Signs point to yes','Doubt','According to my *cough* sources,no','It\'s possible,you just need to make it happen','**( ͡° ͜ʖ ͡°)**','You ask me another question one more time,I\'m going to go fucking crazy here','obviously',f'{random.choice(range(0, 101))} percent chance','sure']
+           ' carefully','fuk yes','isn\'t it obvious','yes.','Signs point to yes','Doubt','According to my *cough* sources,no','It\'s possible,you just need to make it happen','**( ͡° ͜ʖ ͡°)**','You ask me another question one more time,I\'m going to go fucking crazy here','obviously',f'{random.choice(range(0, 101))} percent chance','sure']
 
 eitball_img = ['https://i.redd.it/8ahxkbdcwn251.png','https://media.tenor.com/images/6bdd650af717980d5d898d4fd0b8ad52/tenor.gif','https://media1.tenor.com/images/a806d1f520c4a2235bade268628703c1/tenor.gif?itemid=16134793','https://media.tenor.com/images/83d3b6d69d66da8e4f9bb93c4ca17621/tenor.gif','https://static1.srcdn.com/wordpress/wp-content/uploads/2019/05/press-x-to-doubt-la-noire.jpg?q=50&fit=crop&w=960&h=500&dpr=1.5','https://media1.giphy.com/media/jH6s9HMMi53dSdI73r/giphy.gif','https://i.imgflip.com/3k7mkk.png']
 

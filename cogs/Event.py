@@ -125,7 +125,6 @@ class Event(commands.Cog):
         #         await message.channel.send(response)
 
         pass
-
         # if message.author.id == green_ID:
         #     if ' rate ' in message.content:
         #         await message.channel.send(f'{random.choice(range(1, 11))}/10')
